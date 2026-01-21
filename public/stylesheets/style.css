@@ -1,0 +1,133 @@
+:root {
+  /* Color Variables */
+  --jpds-background: #FFFFFF;
+  --jpds-text: #000000;
+  --jpds-accent: #2ecc71;
+  --jpds-primary: #e74c3c;
+  --jpds-secondary: #3498db;
+  --jpds-tertiary: #FFdFFF;
+
+  /* Size Variables */
+  --jpds-size-half: 2px;
+  --jpds-size-1x: 4px;
+  --jpds-size-2x: 8px;
+  --jpds-size-3x: 12px;
+  --jpds-size-4x: 16px;
+  --jpds-size-5x: 20px;
+  --jpds-size-6x: 24px;
+  --jpds-size-7x: 28px;
+  --jpds-size-8x: 32px;
+  --jpds-size-9x: 36px;
+  --jpds-size-10x: 40px;
+  --jpds-size-12x: 48px;
+  --jpds-size-14x: 56px;
+  --jpds-size-16x: 64px;
+  --jpds-size-18x: 72px;
+  --jpds-size-20x: 80px; 
+
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sticky Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--jpds-size-10x);
+  background-color: var(--jpds-background);
+  color: var(--jpds-text);
+  font-size: var(--jpds-size-4x);
+  align-items: center;
+  margin: var(--jpds-size-2x) var(--jpds-size-4x);
+  z-index: 1000;
+}
+
+/* Sticky Sidebar */
+.sidebar {
+  position: fixed;
+  top: 60px; /* Adjust based on header height */
+  left: 0;
+  width: var(--jpds-size-14x);
+  height: calc(100vh - var(--jpds-size-10x)); /* Full height minus header */
+  background-color: var(--jpds-background);
+  padding: 20px;
+  /* box-shadow: 2px 0 5px rgba(0,0,0,0.1); */
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  cursor: pointer;
+  color: var(--jpds-text);
+}
+
+/* Main Content */
+.content {
+  margin-left: var(--jpds-size-14x); /* Width of sidebar + padding */
+  margin-top: 60px; /* Height of header */
+  /* padding: 20px; */
+  /* min-height: 100vh; */
+  height: 400px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust as needed */
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: var(--jpds-size-4x) var(--jpds-size-4x) 0px 0px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Gradient fade effect at the bottom */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px; /* Fade height */
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  z-index: 1;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 20px; /* Position at bottom */
+  left: 20px; /* Position at left */
+  color: var(--jpds-text);
+  z-index: 2;
+  /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent background for readability */
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: var(--jpds-size-5x);
+}
+
